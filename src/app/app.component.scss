@@ -1,0 +1,15 @@
+app-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: hsl(269, 89%, 64%);
+  height: 100px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+app-carousel {
+  display: flex;
+
+  justify-content: center;
+}
