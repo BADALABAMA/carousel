@@ -30,10 +30,14 @@ export class ModalWindowComponent implements OnInit, OnDestroy {
 
     this.count$.pipe(takeUntil(this.onDestroy$)).subscribe((count) => {
       console.log('Count changed:', count);
+      if (count === 0) {
+        this.modalService.setIsVisable(false);
+      }
     });
   }
 
   ngOnDestroy(): void {
+    console.log('Component destroyed');
     this.modalService.stopTimer();
     this.onDestroy$.next();
     this.onDestroy$.complete();
