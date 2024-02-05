@@ -1,5 +1,5 @@
 <header class="header">
   <nav class="navigation" *ngFor="let route of routes">
-    <a [routerLink]="route.path">{{ route.title }}</a>
+    <a class="button" [routerLink]="route.path">{{ route.title }}</a>
   </nav>
 </header>
