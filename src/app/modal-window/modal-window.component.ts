@@ -15,13 +15,17 @@ import { Observable, Subject, takeUntil } from 'rxjs';
   templateUrl: './modal-window.component.html',
   styleUrl: './modal-window.component.scss',
 })
-export class ModalWindowComponent implements OnInit, OnDestroy {
+export class ModalWindowComponent implements OnInit, OnDestroy, OnChanges {
   public count$: Observable<number> = this.modalService.isCounted;
   public onDestroy$ = new Subject<void>();
   constructor(
     private productService: ProductService,
     private modalService: ModalService
   ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('component changed');
+    throw new Error('Method not implemented.');
+  }
   ngOnInit(): void {
     this.modalService.setTimer();
     this.modalService.isVisable$.subscribe((isVisable) => {

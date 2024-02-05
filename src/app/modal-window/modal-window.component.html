@@ -1,8 +1,9 @@
-<div class="container">
+<div class="product-card">
   <div class="product">
-    <p>title: {{ product?.title }}</p>
-    <p>timer: {{ count$ | async }}</p>
-    <img [src]="product?.img" alt="product" />
+    <p class="product-title">title: {{ product?.title }}</p>
+    <p class="product-price">price: {{ product?.price }}</p>
+    <p class="product-timer">timer: {{ count$ | async }}</p>
+    <img class="product-img" [src]="product?.img" alt="product" />
     <button class="button" (click)="toggle()">don't intresting</button>
   </div>
 </div>
